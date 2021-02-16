@@ -1,0 +1,690 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    transition: 0.3s;
+}
+
+body{
+    font-family: "Lato", sans-serif;
+    overflow-x: hidden;
+}
+
+#navBar header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0 5em;
+    background-color: #5F4B8BFF;
+    height: 4em;
+    border-bottom: 2px solid #FC766AFF;
+    z-index:20;
+}
+
+.brand h1{
+    color: #fff;
+    font-family: "Dancing Script";
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 3;
+}
+
+.ham {
+    background-image: url("img/ham.png");
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index:20;
+}
+
+.ham.active{
+    background-image: url("img/close.png");
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+ul.nav-items{
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #5F4B8BFF;
+    transform: translateY(-400px);
+    transition: 0.8s ease;
+    z-index: 10;
+}
+
+li{
+    list-style: none;
+}
+
+ul li.nav-links{
+    padding: 1em 0;
+}
+
+.nav-links a{
+    color:#fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+ul.nav-items.active{
+    transform: translateY(0px);
+}
+
+
+@media(max-width:500px){
+    #navBar header{
+        padding: 0 2em;
+    }
+
+    .brand h1{
+        font-size: 20px;
+    }
+
+    .ham img{
+        width: 30px;
+    }
+}
+
+#hero{
+    position: relative;
+    background: url(img/hero-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    overflow: hidden;
+}
+
+#hero::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background-color: #5F4B8BFF;
+    opacity: 0.4;
+}
+
+.heroText{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width:100%;
+    height: 100%;
+    color: #fff;
+}
+
+.heroText h1{
+    font-size: 5em;
+    text-transform: uppercase;
+    margin-bottom: -10px;
+}
+
+.heroText p{
+    font-family: "Dancing Script";
+    font-size: 30px;
+    letter-spacing: 2px;
+    padding: 1em;
+}
+
+.heroText .btn{
+    font-family: "Lato";
+    padding: 10px 20px;
+    border:none;
+    background:linear-gradient(to top , #5F4B8BFF ,#FC766AFF) ;color:#fff;
+    cursor: pointer;
+}
+
+
+.btn:hover{
+    letter-spacing: 3px;
+    transition: 1s;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+
+@media(max-width:500px){
+    .heroText h1{
+        font-size: 3em;
+    }
+
+    .heroText p{
+        font-size: 20px;
+    }
+}
+
+#newsLetter{
+    position: relative;
+    background: linear-gradient(to top , #5F4B8BFF ,  #E69A8DFF );
+    color: #fff;
+    height: 10em;
+}
+
+.container{
+    position: absolute;
+    text-align: center;
+}
+
+.container h1{
+    padding: 1em 0;
+    text-transform: uppercase;
+}
+
+
+form{
+    display: flex;
+    height: 100%;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+input{
+    font-family: "Lato",sans-serif;
+    padding  : 10px 40px;
+    margin:0 1em;
+    border : none;
+}
+
+input:focus{
+    outline: none;
+}
+
+input[type = "submit"]{
+    background-color: #E69A8DFF;
+    color:#fff;
+    text-transform: uppercase;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+@media(max-width : 880px){
+
+    #newsLetter{
+        height: 15em;
+    }
+
+
+    form{
+        flex-direction: column;
+    }
+
+    input{
+        margin-bottom: 1em ;
+    }
+}
+
+
+@media(max-width:400px){
+    #newsLetter{
+        height: 18em;
+    }
+}
+
+.diningHeader{
+    text-align: center;
+    padding: 2em 0;
+}
+
+.diningHeader {
+    position: relative;
+}
+
+.diningHeader h1{
+    font-size: 30px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #5F4B8BFF;
+    display: inline-block;
+}
+
+.diningHeader p{
+    padding: .5em 0;
+    font-family: "Dancing Script";
+    font-size: 20px;
+}
+
+.items{
+    max-width: 1040px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.item{
+    position: relative;
+    width: 250px; 
+    height:250px;
+    margin: 1em 0;
+}
+
+.image{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.img-overlay{
+    position : absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(95, 75, 139 , 0.7);
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.diningName{
+    z-index: 10;
+    color: #fff;
+}
+
+.diningName h1{
+    text-transform: uppercase;
+}
+
+.diningName p{
+    font-family: "Dancing Script";
+    padding-bottom: 1em;
+}
+
+.diningName button.btn{
+    font-family: "Lato";
+    background-color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.img-overlay:hover{
+    opacity: 1;
+}
+
+@media(max-width:980px){
+    .items{
+        flex-direction: column;
+        justify-content:center ;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+#rooms{
+    margin-left: auto;
+    margin-right: auto; 
+    max-width: 1040px;
+    padding-top: 3em;
+}
+
+.roomsHeader{
+    text-align: center;
+}
+
+.roomsHeader h1{
+    text-transform: uppercase;
+    font-size: 30px;
+    border-bottom: 1px solid #5F4B8BFF;
+    display: inline-block;
+    /* display: none; */
+}
+
+.roomsHeader p{
+    font-family: "Dancing Script";
+    font-size: 20px;
+    padding: .5em 0;
+}
+
+.roomGrid1 , .roomGrid2 ,
+ .roomGrid3 , .roomGrid4 , 
+ .roomGrid5 , .roomGrid6{
+    margin: 3em 0;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 50px;
+}
+
+
+
+img{
+    height: 400px;
+    width: 400px;
+}
+
+.contentGrid .number{
+    font-size: 50px;
+}
+
+.contentGrid .heading{
+    padding: .5em 0;
+    border-top: 2px solid #5F4B8BFF;
+    display: inline-block;
+    font-size: 40px;
+    font-family: "Dancing Script";
+}
+
+.contentGrid .details{
+    padding-bottom: .5em;
+}
+
+.contentGrid .price{
+    padding: 1em 0;
+    font-size: 30px;
+    font-family: "Dancing Script";
+    color:#FC766AFF;
+}
+
+.contentGrid a.btn{
+    background-color: #5F4B8BFF;
+    padding: 10px 30px;
+    border-radius: 30px;
+}
+
+
+.contentGrid a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.contentGrid .heading, .details,.price{
+    margin-left: 30px;
+}
+
+@media(max-width:1080px){
+ 
+    #rooms{
+       margin: 0 4em ;
+    }
+
+    .imgGrid{
+        text-align: center;
+    }
+
+    .roomGrid1 , .roomGrid2 ,
+    .roomGrid3 , .roomGrid4 , 
+    .roomGrid5 , .roomGrid6{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+}
+
+@media(min-width: 1080px){
+    .roomGrid2 > .imgGrid {
+        grid-row: 1;
+      }
+      
+      .roomGrid4 > .imgGrid {
+          grid-row: 1;
+        }
+      
+      .roomGrid6 > .imgGrid {
+          grid-row: 1;
+        }
+    
+     .contentGrid a.btn{
+         margin-left: 30px;
+     }
+        
+}
+
+@media(max-width:500px){
+
+    .contentGrid .heading, .details, .btn ,.price{
+        margin-left: -30px;
+    }
+
+    .contentGrid .details{
+        font-size: 14px;
+        width: 90%;
+    }
+
+    .imgGrid img{
+        width: 300px;
+    }
+
+}
+
+@media(max-width:400px){
+
+    .imgGrid img{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+#deal{
+    max-width: 1040px;
+    margin: auto;
+}
+
+.dealHeader{
+    text-align: center;
+}
+
+.dealHeader h1{
+    font-size: 30px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #5F4B8BFF;
+    display: inline-block;
+}
+
+.dealHeader p{
+    padding-top:1em;
+    padding-bottom: 2em;;
+    font-family: "Dancing Script";
+    font-size: 20px;
+}
+
+.cardItems{
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   gap: 50px;
+   padding: 1.5em 0;
+   text-align: center;
+}
+
+.cardBody{
+    position: relative;
+}
+
+.cardBody img{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: block;
+}
+
+
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(95, 75, 139 ,0.6) ;
+    color: #fff;
+    opacity: 0;
+    transition: 0.5s;
+}
+.button a.btn{
+    background-color: #FC766AFF;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: "Dancing Script";
+    text-transform: uppercase;
+}
+
+.overlay:hover{
+    opacity: 1;
+}
+
+.cardContent{
+    display: inline-block;
+    width: 100%;
+}
+.cardBody .contents{
+    background :linear-gradient(to top   , #5F4B8BFF ,  #FC766AFF );
+    color: #fff;
+    padding: 1em;
+}
+
+.cardBody .contents h1{
+    padding: 1em 0;
+    font-family: "Dancing Script";
+    font-size: 40px;
+}
+
+.contents p{
+    text-transform: uppercase;
+}
+
+@media(max-width:1080px){
+    .cardItems{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+#offers{
+   color : #000;
+   background-color: #fff;
+   margin-bottom: 3em ;
+}
+
+.offersContainer{
+    max-width: 980px;
+    margin: auto;
+    text-align: center;
+}
+
+.offersContainer h1{
+    padding-top: 2em;
+    margin-top: 1em;
+    font-size: 30px;
+    text-transform: uppercase;
+
+}
+
+.underline{
+    border-bottom: 1px solid #FC766AFF;
+    width: 100px;
+    display: inline-block;
+}
+
+.offersContainer p.text{
+    padding: 2em 0;
+    font-size: 18px;
+    width: 70%;
+    margin: auto;
+    letter-spacing: 1.8px;
+    font-family: "Dancing Script";    
+}
+
+.offersContainer a.btn{
+    color: #5F4B8BFF;
+    border: 1px solid #5F4B8BFF;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px ;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: .3s;
+    font-size: 14px;
+}
+
+.offersContainer a.btn:hover{
+    color: #FC766AFF;
+    border: 1px solid #E69A8DFF;
+}
+
+#footer{
+    background:linear-gradient(to top , #E69A8DFF , #5F4B8BFF);
+    color:#fff;
+    padding: 2em 0;
+    font-family: "Dancing Script";
+    font-size: 20px;
+}
+
+.flexItems{
+    max-width: 1140px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.flexItem1,.flexItem2,.flexItem3{
+    padding-bottom: 2em;
+}
+
+.flexItem1 li,.flexItem2 li{
+    padding: .8em 0em;
+}
+
+.flexItem2 li{
+    list-style-type:square;
+    cursor : pointer;
+}
+
+.flexItem3 .contents li{
+   display: inline;
+   padding-left: 2em ;
+}
+
+.flexItem3 .contents h1{
+    padding-bottom: 1em;
+}
+
+i{
+    cursor: pointer;
+}
+
+.flexItems .contents h1{
+    text-transform: uppercase;
+}
+
+@media(max-width:700px){
+    .flexItems{
+        flex-direction: column;
+    }
+}
